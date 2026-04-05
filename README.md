@@ -62,6 +62,16 @@ db/ – Database configuration
 
 features/ – Core modules (transactions, accounts, etc.)
 
+**ScreenShot**
+
+<img width="1334" height="489" alt="image" src="https://github.com/user-attachments/assets/c82397d9-5884-4dae-93e6-8948214bd896" />
+
+
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/2a5dd6cb-f1cd-477b-8d9c-704a25365b43" />
+
+
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/f69bfb65-1e5c-4984-a4b9-883a98532e0e" />
+
 
 **👤 Author**
 
