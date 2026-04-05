@@ -5,7 +5,7 @@ A modern and responsive Finance Dashboard UI to track income, expenses, and fina
 
 **🚀 Tech Stack**
 
-Frontend: Next.js, React, TypeScript
+Frontend: React, TypeScript
 
 Styling: Tailwind CSS
 
