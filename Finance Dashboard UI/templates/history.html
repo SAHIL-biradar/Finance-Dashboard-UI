@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="card">
+    <h2>Transaction History</h2>
+
+    <form method="get" style="margin-bottom:8px;">
+        <label>From</label>
+        <input name="from" placeholder="YYYY-MM-DD">
+        <label>To</label>
+        <input name="to" placeholder="YYYY-MM-DD">
+        <button type="submit">Filter</button>
+        <a href="{{ url_for('history') }}">Clear</a>
+    </form>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in rows %}
+            <tr>
+                <td>{{ r.date }}</td>
+                <td>{{ r.type }}</td>
+                <td>₹{{ "%.2f"|format(r.amount) }}</td>
+                <td>{{ r.category }}</td>
+                <td>{{ r.description }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

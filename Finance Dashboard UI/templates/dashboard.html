@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="grid">
+    <div class="card">
+        <h3 style="text-align: center;">Monthly Summary — {{ year }}-{{ "%02d"|format(month) }}</h3>
+        <p>Total Income: ₹{{ "%.2f"|format(income) }}</p>
+        <p>Total Expense: ₹{{ "%.2f"|format(expense) }}</p>
+        <p><strong>Balance: ₹{{ "%.2f"|format(balance) }}</strong></p>
+        <p>
+            <a href="{{ url_for('export', year=year, month=month) }}">Export this month (CSV)</a> |
+            <a href="{{ url_for('export') }}">Export all</a>
+        </p>
+    </div>
+
+    <div class="card">
+        <h3 style="text-align: center;">Add Transaction</h3>
+        <form method="get" action="{{ url_for('add') }}">
+            <button type="submit">Open Add Form</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h3 style="text-align: center;">Expenses by Category</h3>
+        <canvas id="pieChart" data-labels='{{ cat_labels|tojson }}' data-values='{{ cat_values|tojson }}'></canvas>
+    </div>
+
+    <div class="card">
+        <h3 style="text-align: center;">Last 6 months</h3>
+        <canvas id="lineChart" data-trend='{{ trend|tojson }}'></canvas>
+    </div>
+</div>
+{% endblock %}
